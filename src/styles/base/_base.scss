@@ -1,0 +1,68 @@
+@use "../setting/config" as *;
+@use "../setting/mixin";
+
+/*------------------------
+ base
+------------------------*/
+
+html {
+  font-size: 100%;
+}
+
+body {
+  @include mixin.font-main;
+  font-size: 1rem;
+  font-feature-settings: "palt";
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  color: $color-main;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+a {
+  color: $color-main;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+p {
+  font-size: rem(14);
+  margin: 1rem auto;
+
+  @include mq(lg) {
+    font-size: rem(16);
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+button {
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: rem(14);
+
+  @include mq(lg) {
+    font-size: rem(16);
+  }
+}

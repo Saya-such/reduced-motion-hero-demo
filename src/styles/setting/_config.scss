@@ -1,0 +1,30 @@
+@use "sass:math";
+@use "sass:map";
+
+//カラー
+$color-main: #383332;
+$color-sub: #231815;
+
+//rem換算
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+//ブレイクポイント
+$breakpoints: (
+  "sm": 767px,
+  "md": 768px,
+  "lg": 1024px,
+);
+
+@mixin mq($bp, $type: min) {
+  @if $type == max {
+    @media screen and (max-width: #{map.get($breakpoints, $bp)}) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: #{map.get($breakpoints, $bp)}) {
+      @content;
+    }
+  }
+}

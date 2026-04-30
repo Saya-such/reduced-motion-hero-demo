@@ -1,0 +1,43 @@
+@use "../setting/config" as *;
+@use "../setting/mixin";
+
+/*------------------------
+ hero
+------------------------*/
+
+.hero {
+  width: 100dvw;
+  height: 100dvh;
+  background: url("/images/reduced-motion_mv-sp.webp") no-repeat center center/
+    cover;
+
+  @include mq(lg) {
+    background: url("/images/reduced-motion_mv.webp") no-repeat center center/
+      cover;
+  }
+
+  &__inner {
+    width: clamp(50vw, 1200px, 95vw);
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &__title-area {
+    align-self: flex-end;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 10vw, 4.5rem);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: rem(10);
+  }
+
+  &__content {
+    p {
+      text-align: center;
+    }
+  }
+}

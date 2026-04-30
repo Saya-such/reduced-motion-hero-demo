@@ -1,0 +1,14 @@
+@use "config" as *;
+
+@mixin font-main {
+  font-family: "Arial", sans-serif;
+}
+
+@mixin inner($width: $content-width) {
+  width: min(100% - 40px, $width);
+  margin-inline: auto;
+
+  @include mq(md) {
+    width: min(100% - 100px, $width);
+  }
+}
