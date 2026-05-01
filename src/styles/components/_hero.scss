@@ -6,15 +6,9 @@
 ------------------------*/
 
 .hero {
+  position: relative;
   width: 100dvw;
   height: 100dvh;
-  background: url("/images/reduced-motion_mv-sp.webp") no-repeat center center/
-    cover;
-
-  @include mq(lg) {
-    background: url("/images/reduced-motion_mv.webp") no-repeat center center/
-      cover;
-  }
 
   &__inner {
     width: clamp(50vw, 1200px, 95vw);
@@ -38,6 +32,30 @@
   &__content {
     p {
       text-align: center;
+    }
+  }
+
+  &__bg {
+    --bg-inset: #{rem(7)};
+    position: absolute;
+    content: "";
+    width: calc(100% - var(--bg-inset) * 2);
+    height: calc(100% - var(--bg-inset) * 2);
+    top: var(--bg-inset);
+    left: var(--bg-inset);
+    border-radius: 3px;
+    background: url("/images/reduced-motion_mv-sp.webp") no-repeat center
+      center/ cover;
+    z-index: -1;
+
+    @include mq(md) {
+      --bg-inset: #{rem(10)};
+      border-radius: 5px;
+    }
+
+    @include mq(lg) {
+      background: url("/images/reduced-motion_mv.webp") no-repeat center center/
+        cover;
     }
   }
 }

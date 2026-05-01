@@ -1,5 +1,3 @@
-import Button from "./Button";
-
 const Hero = () => {
   return (
     <section className="hero">
@@ -12,10 +10,19 @@ const Hero = () => {
           </h1>
         </div>
         <div className="hero__content">
-          <p>Frontend Showcase by such</p>
-          <Button />
+          <p>
+            Frontend Showcase by{" "}
+            <a
+              href="https://such-web.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              such
+            </a>
+          </p>
         </div>
       </div>
+      <div className="hero__bg"></div>
     </section>
   );
 };
