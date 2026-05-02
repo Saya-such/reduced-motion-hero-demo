@@ -1,0 +1,46 @@
+@use "../setting/config" as *;
+@use "../setting/mixin";
+
+/*------------------------
+ button
+------------------------*/
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(32);
+
+  &__link {
+    font-weight: bold;
+    margin: auto;
+    padding: rem(24) rem(56);
+    border-radius: 5px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    color: $color-main;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translate3d(1px, 1px, 0);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .button {
+      &__link {
+        background-color: $color-main;
+        color: #fff;
+
+        &:hover {
+          opacity: 0.8;
+          transform: none;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import heroAnimation from "./heroAnimation";
+import Button from "../Button";
 
 gsap.registerPlugin(useGSAP);
 
@@ -45,6 +46,7 @@ const Hero = () => {
               such
             </a>
           </p>
+          <Button class="hero__button" />
         </div>
       </div>
       <div ref={bgRef} className="hero__bg"></div>
