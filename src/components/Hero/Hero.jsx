@@ -11,6 +11,7 @@ const Hero = () => {
   const bgRef = useRef(null);
   const titleRef = useRef(null);
   const textRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useGSAP(
     () => {
@@ -19,6 +20,7 @@ const Hero = () => {
         bg: bgRef.current,
         title: titleRef.current,
         text: textRef.current,
+        button: buttonRef.current,
       });
       tl.play();
     },
@@ -46,7 +48,7 @@ const Hero = () => {
               such
             </a>
           </p>
-          <Button class="hero__button" />
+          <Button ref={buttonRef} class="hero__button" />
         </div>
       </div>
       <div ref={bgRef} className="hero__bg"></div>
