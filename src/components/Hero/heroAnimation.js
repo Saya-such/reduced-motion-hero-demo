@@ -1,10 +1,6 @@
 import { gsap } from "gsap";
 
-const heroAnimation = ({ bg, title, text, button }) => {
-  const isReduced = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-
+const heroAnimation = (isReduced) => {
   const tl = gsap.timeline({
     paused: true,
     defaults: {
@@ -15,27 +11,41 @@ const heroAnimation = ({ bg, title, text, button }) => {
 
   if (isReduced) {
     tl.fromTo(
-      title,
+      ".hero__title",
       { opacity: 0 },
       { opacity: 1, duration: 1.2, delay: 0.1, ease: "power4.in" },
     )
       .fromTo(
-        text,
+        ".hero__text",
         { opacity: 0 },
         { opacity: 1, duration: 1.2, ease: "power4.in" },
         "<",
       )
       .fromTo(
-        button,
+        ".hero__button",
         { opacity: 0 },
         { opacity: 1, duration: 1.2, ease: "power4.in" },
         "<",
       );
   } else {
-    tl.fromTo(bg, { scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1 })
-      .fromTo(title, { y: 10, opacity: 0 }, { y: 0, opacity: 1 }, ">")
-      .fromTo(text, { y: 5, opacity: 0 }, { y: 0, opacity: 1 }, "<+=0.5")
-      .fromTo(button, { y: 5, opacity: 0 }, { y: 0, opacity: 1 }, "<+=0.5");
+    tl.fromTo(
+      ".hero__bg",
+      { scale: 0.95, opacity: 0 },
+      { scale: 1, opacity: 1 },
+    )
+      .fromTo(".hero__title", { y: 10, opacity: 0 }, { y: 0, opacity: 1 }, ">")
+      .fromTo(
+        ".hero__text",
+        { y: 5, opacity: 0 },
+        { y: 0, opacity: 1 },
+        "<+=0.5",
+      )
+      .fromTo(
+        ".hero__button",
+        { y: 5, opacity: 0 },
+        { y: 0, opacity: 1 },
+        "<+=0.5",
+      );
   }
 
   return tl;

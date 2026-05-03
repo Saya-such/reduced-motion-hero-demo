@@ -1,6 +1,9 @@
-const Button = (props) => {
+const Button = ({ ref, className, isReduced }) => {
   return (
-    <div ref={props.ref} className={"button " + props.class}>
+    <div
+      ref={ref}
+      className={`button ${className} ${isReduced && "is-reduced"}`}
+    >
       <button className="button__link">View More</button>
     </div>
   );
