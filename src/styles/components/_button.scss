@@ -29,7 +29,7 @@
     }
   }
 
-  @media (prefers-reduced-motion: reduce) {
+  &.is-reduced {
     .button {
       &__link {
         background-color: $color-main;

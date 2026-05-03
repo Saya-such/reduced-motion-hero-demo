@@ -6,9 +6,14 @@
 ------------------------*/
 
 .hero {
+  --bg-inset: #{rem(7)};
   position: relative;
   width: 100dvw;
   height: 100dvh;
+
+  @include mq(md) {
+    --bg-inset: #{rem(10)};
+  }
 
   &__inner {
     width: clamp(50vw, 1200px, 95vw);
@@ -36,7 +41,6 @@
   }
 
   &__bg {
-    --bg-inset: #{rem(7)};
     position: absolute;
     content: "";
     width: calc(100% - var(--bg-inset) * 2);
@@ -50,13 +54,23 @@
     transform-origin: center;
 
     @include mq(md) {
-      --bg-inset: #{rem(10)};
       border-radius: 5px;
     }
 
     @include mq(lg) {
       background: url("/images/reduced-motion_mv.webp") no-repeat center center/
         cover;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    top: calc(1rem + var(--bg-inset));
+    right: calc(0.5rem + var(--bg-inset));
+
+    @include mq(md) {
+      top: calc(2rem + var(--bg-inset));
+      right: calc(2rem + var(--bg-inset));
     }
   }
 }
