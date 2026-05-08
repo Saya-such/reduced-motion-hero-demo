@@ -4,7 +4,7 @@ A React + GSAP demo that shows how animations can adapt to the user's `prefers-r
 
 ## Demo
 
-Coming soon
+[Reduced Motion Hero Demo | Frontend Showcase by such](https://reduced-motion-hero-demo.netlify.app/)
 
 ## Features
 
