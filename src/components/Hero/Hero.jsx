@@ -18,7 +18,7 @@ const Hero = () => {
   useGSAP(
     () => {
       // ⚠️ create GSAP timeline inside useGSAP (DOM must be ready!!!)
-      const tl = heroAnimation(isReduced).play();
+      heroAnimation(isReduced).play();
     },
     { dependencies: [isReduced], scope: container, revertOnUpdate: true },
   );
