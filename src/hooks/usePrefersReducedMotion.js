@@ -8,12 +8,12 @@ const usePrefersReducedMotion = () => {
 
     setReduced(mediaQuery.matches);
 
-    mediaQuery.addEventListener("change", () => setReduced((prev) => !prev));
+    const handler = () => setReduced(mediaQuery.matches);
+
+    mediaQuery.addEventListener("change", handler);
 
     return () => {
-      mediaQuery.removeEventListener("change", () =>
-        setReduced((prev) => !prev),
-      );
+      mediaQuery.removeEventListener("change", handler);
     };
   }, []);
 
