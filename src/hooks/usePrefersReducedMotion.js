@@ -8,7 +8,7 @@ const usePrefersReducedMotion = () => {
 
     setReduced(mediaQuery.matches);
 
-    const handler = () => setReduced(mediaQuery.matches);
+    const handler = (event) => setReduced(event.matches);
 
     mediaQuery.addEventListener("change", handler);
 

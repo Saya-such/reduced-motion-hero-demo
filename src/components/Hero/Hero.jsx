@@ -52,8 +52,8 @@ const Hero = () => {
         className="hero__toggle"
         disabled={systemReduced}
         isReduced={isReduced}
-        onChange={() => {
-          setToggleReduced((prev) => !prev);
+        onChange={(event) => {
+          setToggleReduced(event.target.checked);
         }}
       />
     </section>
